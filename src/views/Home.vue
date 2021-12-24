@@ -1,19 +1,35 @@
 <template lang="pug">
 div
     test(class="test")
-    div 123
+    div(@click="storeFn") {{test}}
 </template>
 
 <script>
 	// @ is an alias to /src
 	import HelloWorld from '@/components/HelloWorld.vue'
 	import test from '../components/test';
+	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
 
 	export default {
 		name: 'Home',
 		components: {
 			HelloWorld,test
-		}
+		},
+		computed:{
+			...mapState(['test'])
+        },
+        methods:{
+	        storeFn(){
+		        this.$store.commit('add','1');
+	        	console.log(this.$store.state.test)
+
+                this.$store.dispatch('add1','2');
+		        console.log(this.$store.state.test)
+
+	        	// let t = this.$store.getters.getTest(2);
+	        	// console.log(t);
+            }
+        }
 	}
 </script>
 
