@@ -10,7 +10,7 @@ import {ajax,api} from "./lib/ajax";
 const app = createApp(App);
 app.use(store);
 app.use(router);
-app.config.globalProperties.username = {aaa:111};
+// app.config.globalProperties.username = {aaa:111};
 app.config.globalProperties.ajax = ajax;
 app.config.globalProperties.api = api;
 app.mount('#app');

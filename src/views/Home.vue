@@ -1,7 +1,6 @@
 <template lang="pug">
 div
-    test(class="test")
-    div(@click="storeFn") {{test}}
+    div(class="test" @click="testFn") test
     pagination(
         class='pagination box_hcc'
         :totalList="141"
@@ -14,6 +13,7 @@ div
 <script>
 	// @ is an alias to /src
     import pagination from "../components/pagination/pagination";
+    import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
 
@@ -35,6 +35,17 @@ div
 
 	        	// let t = this.$store.getters.getTest(2);
 	        	// console.log(t);
+            },
+	        testFn(){
+	        	console.log(this.username)
+	        	// this.$router.push({
+                //     path:"/about",
+                //     query:{id:123456}
+                // });
+		        // sys.goBack();
+	        	sys.openPage('/about',{id:1},'self');
+                // sys.refresh();
+
             }
         }
 	}

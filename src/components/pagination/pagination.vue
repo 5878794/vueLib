@@ -48,7 +48,6 @@ div(class="body_ box_hcc")
                 }
 
         		this.list = this.getList();
-        		console.log(this.list)
             },
             //获取页数
 	        getList(){
