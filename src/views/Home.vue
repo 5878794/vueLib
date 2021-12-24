@@ -13,7 +13,7 @@ div
 
 <script>
 	// @ is an alias to /src
-    import pagination from "../components/pagination";
+    import pagination from "../components/pagination/pagination";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
 
@@ -46,6 +46,5 @@ div
     }
     .pagination{
         width: 100%; height: 100px;
-        background: #42b983;
     }
 </style>
