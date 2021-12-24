@@ -2,18 +2,25 @@
 div
     test(class="test")
     div(@click="storeFn") {{test}}
+    pagination(
+        class='pagination box_hcc'
+        :totalList="141"
+        :nowPage="6"
+        :pageSize="10"
+        url="/about?page="
+    )
 </template>
 
 <script>
 	// @ is an alias to /src
-	import HelloWorld from '@/components/HelloWorld.vue'
-	import test from '../components/test';
+    import pagination from "../components/pagination";
+
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
 
 	export default {
 		name: 'Home',
 		components: {
-			HelloWorld,test
+			pagination
 		},
 		computed:{
 			...mapState(['test'])
@@ -36,5 +43,9 @@ div
 <style lang="less" scoped>
     .test{
         color:red; padding-top: 20px;
+    }
+    .pagination{
+        width: 100%; height: 100px;
+        background: #42b983;
     }
 </style>
