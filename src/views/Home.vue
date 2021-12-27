@@ -8,15 +8,14 @@ div
         :pageSize="10"
         url="/about?page="
     )
-    b-input(
-        rowStyle="height:40px;"
+    b-text(
         ref="input_text"
         inRef='input2'
         class="b_input"
         placeholder="电话号码"
         :disabled="false"
         :icon="icon"
-        name="电话"
+        name="输入"
         value="fff"
         unit="米"
         rule="must,min:1,max:20,str"
@@ -27,13 +26,26 @@ div
 
 
 
+    b-info(
+        ref="input_text"
+        class="b_input"
+        :icon="icon"
+        name="文本"
+        value="fff"
+        unit="米"
+    )
+
+
+
+
     div(@click="getVal") aaaa
 </template>
 
 <script>
 	// @ is an alias to /src
     import pagination from "../components/pagination/pagination";
-    import bInput from '../components/input/text';
+    import bText from '../components/input/text';
+    import bInfo from '../components/input/info';
     import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
@@ -41,7 +53,7 @@ div
 	export default {
 		name: 'Home',
 		components: {
-			pagination,bInput
+			pagination,bText,bInfo
 		},
 		computed:{
 			...mapState(['test'])

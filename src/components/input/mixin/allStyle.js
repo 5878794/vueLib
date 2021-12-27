@@ -5,7 +5,7 @@
 
 export default {
 	//行的样式
-	rowStyle:'width:100%;height:30px;',
+	rowStyle:'width:100%;height:40px;line-height:40px;',
 	//单位的样式
 	unitStyle:'font-size:14px; color:#333; width:30px;',
 	//字段样式

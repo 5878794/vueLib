@@ -195,6 +195,7 @@ div(class="body_ box_hcc")
         width: 30px; height: 30px; border:1px solid #333;
         margin: 0 10px; color: #333; line-height: 30px;
         font-size: 16px; text-decoration: none;
+        text-align: center; border-radius: 5px;
         &:hover{
             opacity: .5;
         }
