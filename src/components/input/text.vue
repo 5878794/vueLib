@@ -1,47 +1,57 @@
 
-<template>
-    <div>
-        <div class="box_hlc body" :style="'height:'+height ">
-            <div class="input_body box_hlc boxflex1" :class="disabledClass">
 
-                <!--            判断是否有图标-->
-                <img v-if="icon" ref="icon" class="icon_" :src="icon"/>
+<template lang="pug">
+bodyDom(
+    :icon="icon"
+    :name="name"
+    :value="value"
+    :unit="unit"
+    :err="err"
+    :disabled="disabled"
+    :rowStyle="rowStyle"
+    :unitStyle="unitStyle"
+    :nameStyle="nameStyle"
+    :inputStyle="inputStyle"
+    :inputFocusStyle="inputFocusStyle"
 
-                <div v-if="name" :style="nameStyle" ref="name" class="name">{{name}}</div>
+    :showErr="showErr"
+)
+    input(
+        :style="nowInputStyle"
+        :disabled="disabled"
+        class="__input__ boxflex1"
+        type="text"
+        :placeholder="placeholder1"
+        v-model="val"
+        :rule="rule"
+        @focus="focusFn"
+        @blur="BlurFn"
+        @input="onInput"
+    )
 
-
-                <input
-                    :style="nowInputStyle"
-                    @focus="focusFn"
-                    @blur="BlurFn"
-                    placeholder-class="placeholder_style"
-                    :disabled="disabled"
-                    class="__input__ boxflex1"
-                    type="text"
-                    :placeholder="placeholder1"
-                    v-model="val"
-                    :rule="rule"
-                    @input="onInput"
-                />
-
-
-                <div v-if="unit" class="unit">{{unit}}</div>
-
-            </div>
-        </div>
-            <div v-if="showErr" :style="errLeft" class="err">{{err}}</div>
-    </div>
 </template>
 
 
 <script>
-    import mixinFn from "./mixin/mixin";
+    import bodyDom from './mixin/body';
+    import mixinFn from './mixin/mixin';
+
 	export default {
-		mixins:[mixinFn]
+    	components:{bodyDom},
+        mixins:[mixinFn]
 	}
 </script>
 
 <style scoped lang="less">
     @import "../../css/box";
-    @import "./mixin/publish.css";
+
+    .__input__{
+        position: relative;
+        display: block;
+        height: 100%;
+        color: #333; box-sizing: border-box;
+        padding:0 10px;
+        box-sizing: border-box;
+        background: none;
+    }
 </style>

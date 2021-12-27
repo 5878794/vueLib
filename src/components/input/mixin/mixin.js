@@ -1,5 +1,4 @@
 
-
 import checkFn from './inputCheck';
 
 export default {
@@ -8,7 +7,7 @@ export default {
 			type: String,
 			default: ''
 		},
-		place:{
+		placeholder:{
 			type: String,
 			default: ''
 		},
@@ -32,10 +31,6 @@ export default {
 			type:Boolean,
 			default:false
 		},
-		// textAlign:{
-		// 	type:String,
-		// 	default:'right'
-		// },
 		unit:{
 			type:String,
 			default:''
@@ -52,9 +47,13 @@ export default {
 			type:Boolean,
 			default:true
 		},
-		height:{
+		rowStyle:{
 			type:String,
-			default:'30px'
+			default:'height:30px;'
+		},
+		unitStyle:{
+			type:String,
+			default:''
 		},
 		nameStyle:{
 			type:String,
@@ -67,12 +66,14 @@ export default {
 		inputFocusStyle:{
 			type:String,
 			default:''
+		},
+		disabledStyle:{
+			type:String,
+			default:'color:#ccc;'
 		}
 	},
 	data(){
 		return {
-			// textAlign__:'',
-			disabledClass:'',
 			placeholder1:'',
 			val:'',
 			showErr:false,
@@ -92,19 +93,12 @@ export default {
 	},
 
 	mounted(){
-		this.placeholder1 = this.place;
+		this.placeholder1 = this.placeholder;
 		this.nowInputStyle = this.inputStyle;
 		this.val = this.value;
 
-		console.log(this.nowInputStyle,this.nameStyle)
-
 		this.disabledFn();
 
-		let left = 0,
-			icon = (this.icon)? this.$refs.icon.offsetWidth : 0,
-			name = (this.name)? this.$refs.name.offsetWidth: 0;
-		left = left +icon +name;
-		this.errLeft = 'padding-left:'+left +'px';
 
 	},
 	methods: {
@@ -136,11 +130,11 @@ export default {
 		disabledFn: function () {//  'params'是要监听的字段，（params）是已更新变化后的数据
 			let params = this.disabled;
 			if(params){
-				this.disabledClass = 'disabledClass';
-				this.placeholder = '';
+				this.nowInputStyle = this.disabledStyle;
+				this.placeholder1 = '';
 			}else{
-				this.disabledClass = '';
-				this.placeholder = this.placeholder1;
+				this.nowInputStyle = this.inputStyle;
+				this.placeholder1 = this.placeholder;
 			}
 		},
 
