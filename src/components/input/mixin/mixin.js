@@ -1,5 +1,6 @@
 
 import checkFn from './inputCheck';
+import allStyle from "./allStyle";
 
 export default {
 	props:{
@@ -39,37 +40,37 @@ export default {
 			type:String,
 			default:''
 		},
-		maxlength:{     //只有digit加咯该属性
-			type:[Number,String],
-			default:-1
-		},
 		blurCheck:{
 			type:Boolean,
 			default:true
 		},
 		rowStyle:{
 			type:String,
-			default:'height:30px;'
+			default:allStyle.rowStyle
 		},
 		unitStyle:{
 			type:String,
-			default:''
+			default:allStyle.unitStyle
 		},
 		nameStyle:{
 			type:String,
-			default:''
+			default:allStyle.nameStyle
 		},
 		inputStyle:{
 			type:String,
-			default:''
+			default:allStyle.inputStyle
 		},
 		inputFocusStyle:{
 			type:String,
-			default:''
+			default:allStyle.inputFocusStyle
 		},
 		disabledStyle:{
 			type:String,
-			default:'color:#ccc;'
+			default:allStyle.disabledStyle
+		},
+		errStyle:{
+			type:String,
+			default:allStyle.errStyle
 		}
 	},
 	data(){

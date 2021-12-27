@@ -67,6 +67,10 @@ div
 			showErr:{
 				type:Boolean,
                 default:false
+            },
+			errStyle:{
+				type:String,
+				default:''
             }
 		},
 		data(){
@@ -81,7 +85,7 @@ div
 				icon = (this.icon)? this.$refs.icon.offsetWidth : 0,
 				name = (this.name)? this.$refs.name.offsetWidth: 0;
 			left = left +icon +name;
-			this.errLeft = 'padding-left:'+left +'px';
+			this.errLeft = 'padding-left:'+left +'px;'+this.errStyle;
 
 		},
 		methods: {
@@ -111,7 +115,6 @@ div
         box-sizing: border-box;
         color: #222223;
         padding-right: 10px;
-        width: 100px;
     }
 
     .input_body{
