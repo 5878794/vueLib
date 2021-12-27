@@ -1,0 +1,22 @@
+
+
+文本输入
+
+
+html:
+<b-text
+        ref="input_text"
+        class="b_input"
+        placeholder="电话号码"
+        icon="/static/logo.png"
+        name="电话"
+        height="30px"
+        value="123"
+        unit="米"
+        rule="must,min:1,max:20,str"
+        err="请输入用户名"
+        nameStyle=""
+        inputStyle=""
+        inputFocusStyle=""      //需要设置 outline: none; 否则边框颜色不生效
+        @mychange='functionFn'
+></b-text>
