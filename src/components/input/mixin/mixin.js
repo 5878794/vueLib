@@ -127,7 +127,7 @@ export default {
 			this.val = value;
 		},
 
-		disabledFn: function () {//  'params'是要监听的字段，（params）是已更新变化后的数据
+		disabledFn: function () {
 			let params = this.disabled;
 			if(params){
 				this.nowInputStyle = this.disabledStyle;
