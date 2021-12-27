@@ -23,7 +23,21 @@ div
         :blurCheck='true'
         @mychange="changeFn"
     )
-
+    b-password(
+        ref="input_text"
+        inRef='input2'
+        class="b_input"
+        placeholder="电话号码"
+        :disabled="false"
+        :icon="icon"
+        name="密码"
+        value="fff"
+        unit="米"
+        rule="must,min:1,max:20,str"
+        err="请输入用户名"
+        :blurCheck='true'
+        @mychange="changeFn"
+    )
 
 
     b-info(
@@ -46,6 +60,7 @@ div
     import pagination from "../components/pagination/pagination";
     import bText from '../components/input/text';
     import bInfo from '../components/input/info';
+    import bPassword from "../components/input/password";
     import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
@@ -53,7 +68,7 @@ div
 	export default {
 		name: 'Home',
 		components: {
-			pagination,bText,bInfo
+			pagination,bText,bInfo,bPassword
 		},
 		computed:{
 			...mapState(['test'])
