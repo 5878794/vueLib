@@ -52,6 +52,24 @@ div
 
 
 
+    b-sms(
+        ref="input_text"
+        inRef='input2'
+        class="b_input"
+        placeholder="电话号码"
+        :disabled="false"
+        :icon="icon"
+        name="输入"
+        value="fff"
+        unit="米"
+        rule="must,min:1,max:20,str"
+        err="请输入用户名"
+        :blurCheck='true'
+
+        sendSmsFn='sendSms'
+
+    )
+
     div(@click="getVal") aaaa
 </template>
 
@@ -61,6 +79,7 @@ div
     import bText from '../components/input/text';
     import bInfo from '../components/input/info';
     import bPassword from "../components/input/password";
+    import bSms from '../components/input/sms';
     import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
@@ -68,7 +87,7 @@ div
 	export default {
 		name: 'Home',
 		components: {
-			pagination,bText,bInfo,bPassword
+			pagination,bText,bInfo,bPassword,bSms
 		},
 		computed:{
 			...mapState(['test'])
@@ -106,6 +125,14 @@ div
 	        async getVal(){
 	        	let val = await this.$refs.input_text.check();
 	        	console.log(val);
+            },
+	        sendSms(){
+	        	console.log(123)
+		        return new Promise(success=>{
+			        setTimeout(e=>{
+				        success(true);
+			        },1000)
+		        });
             }
         }
 	}

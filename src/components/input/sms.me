@@ -1,0 +1,22 @@
+
+
+短信输入
+
+
+html:
+<b-sms
+    ref="input_text"
+    inRef='input2'
+    class="b_input"
+    placeholder="电话号码"
+    :disabled="false"
+    :icon="icon"
+    name="电话"
+    value="fff"
+    rule="must,min:1,max:20,str"
+    err="请输入用户名"
+    :blurCheck='true'
+
+    //之下可以在全局配置 mixin/allStyle.js中配置  单独写会覆盖全局
+
+></b-text>
