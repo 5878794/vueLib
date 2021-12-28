@@ -8,9 +8,9 @@
 <template lang="pug">
 div
     div(class="box_hlc body" :style="rowStyle")
-        div(class="input_body box_hlc boxflex1" :class="disabledClass")
-            img(v-if="icon" ref="icon" class="icon_" :src="icon")
-            div(v-if="name" :style="nameStyle" ref="name" class="name") {{name}}
+        div(class="input_body boxflex1" :class="[boxType,disabledClass]")
+            img(v-if="icon" ref="icon" class="icon_" :src="icon" :style="iconStyle")
+            div(v-if="name" :style="nameStyle1" ref="name" class="name") {{name}}
             slot
             div(v-if="unit" class="unit" :style="unitStyle") {{unit}}
     div(v-if="showErr" :style="errLeft" class="err") {{err}}
@@ -71,14 +71,25 @@ div
 			errStyle:{
 				type:String,
 				default:''
+            },
+            boxType:{
+	            type:String,
+	            default:'box_hlc'
             }
 		},
 		data(){
 			return {
-				disabledClass:''
+				disabledClass:'',
+				iconStyle:'',
+				nameStyle1:''
 			}
 		},
 		mounted(){
+			if(this.boxType == 'box_hlt'){
+				this.iconStyle = 'padding-top:10px;';
+				this.nameStyle1 = this.nameStyle + 'padding-top:10px;';
+            }
+
 			this.disabledFn();
 
 			let left = 0,

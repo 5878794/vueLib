@@ -38,6 +38,10 @@ export default {
 	//yzm
 	yzm:{
 		yzmStyle:'width:80px; height:40px; display:block;'
+	},
+
+	textarea:{
+		rowStyle:'width:100%;height:100px;line-height:20px;'
 	}
 
 };

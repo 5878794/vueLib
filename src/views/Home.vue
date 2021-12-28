@@ -9,7 +9,7 @@ div
         url="/about?page="
     )
     b-text(
-        ref="input_text"
+        ref="input_text123"
         inRef='input2'
         class="b_input"
         placeholder="电话号码"
@@ -86,6 +86,20 @@ div
 
     )
 
+    b-textarea(
+        ref="input_textarea"
+        inRef='input2'
+        class="b_textarea"
+        placeholder="电话号码"
+        :disabled="false"
+        :icon="icon"
+        name="输入"
+        value="fff"
+        rule="must,min:1,max:20,str"
+        err="请输入用户名"
+        :blurCheck='true'
+        @mychange="changeFn"
+    )
     div(@click="getVal") aaaa
 </template>
 
@@ -97,6 +111,7 @@ div
     import bPassword from "../components/input/password";
     import bSms from '../components/input/sms';
     import bYzm from '../components/input/yzm';
+    import bTextarea from '../components/input/textarea';
     import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
@@ -104,7 +119,7 @@ div
 	export default {
 		name: 'Home',
 		components: {
-			pagination,bText,bInfo,bPassword,bSms,bYzm
+			pagination,bText,bInfo,bPassword,bSms,bYzm,bTextarea
 		},
 		computed:{
 			...mapState(['test'])
@@ -140,7 +155,7 @@ div
 	        	console.log(val)
             },
 	        async getVal(){
-	        	let val = await this.$refs.input_text.check();
+	        	let val = await this.$refs.input_text123.check();
 	        	console.log(val);
             },
 	        sendSms(){
@@ -173,6 +188,9 @@ div
         width: 100%; height: 100px;
     }
     .b_input{
+        width: 100%; margin-bottom: 20px;
+    }
+    .b_textarea{
         width: 100%; margin-bottom: 20px;
     }
 </style>
