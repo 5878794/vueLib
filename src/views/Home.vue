@@ -8,6 +8,22 @@ div
         :pageSize="10"
         url="/about?page="
     )
+    b-select(
+        ref="input_text123"
+        inRef='input2'
+        class="b_input"
+        placeholder="请选择电话号码"
+        :disabled="false"
+        :selectData="selectData"
+        :icon="icon"
+        name="输入"
+        value="0"
+        unit="米"
+        rule="must"
+        err="请输入用户名"
+        :blurCheck='true'
+        @mychange="changeFn"
+    )
     b-text(
         ref="input_text123"
         inRef='input2'
@@ -112,6 +128,7 @@ div
     import bSms from '../components/input/sms';
     import bYzm from '../components/input/yzm';
     import bTextarea from '../components/input/textarea';
+    import bSelect from '../components/input/select';
     import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
@@ -119,14 +136,20 @@ div
 	export default {
 		name: 'Home',
 		components: {
-			pagination,bText,bInfo,bPassword,bSms,bYzm,bTextarea
+			pagination,bText,bInfo,bPassword,bSms,bYzm,bTextarea,bSelect
 		},
 		computed:{
 			...mapState(['test'])
         },
         data(){
 		    return {
-		    	icon:require('../assets/logo.png')
+		    	icon:require('../assets/logo.png'),
+			    selectData:[
+                    {key:0,val:'a'},
+				    {key:2,val:'b'},
+				    {key:3,val:'c'},
+				    {key:4,val:'d'}
+                ]
             }
         },
         methods:{
@@ -175,6 +198,9 @@ div
 				        })
 			        },1000)
 		        })
+            },
+	        changeFn(e){
+	        	console.log(e)
             }
         }
 	}
