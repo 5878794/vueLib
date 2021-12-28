@@ -69,6 +69,22 @@ div
         sendSmsFn='sendSms'
 
     )
+    b-yzm(
+        ref="input_text"
+        inRef='input2'
+        class="b_input"
+        placeholder="电话号码"
+        :disabled="false"
+        :icon="icon"
+        name="输入"
+        value="fff"
+        rule="must,min:1,max:20,str"
+        err="请输入用户名"
+        :blurCheck='true'
+
+        getYzmFn='getYzmFn'
+
+    )
 
     div(@click="getVal") aaaa
 </template>
@@ -80,6 +96,7 @@ div
     import bInfo from '../components/input/info';
     import bPassword from "../components/input/password";
     import bSms from '../components/input/sms';
+    import bYzm from '../components/input/yzm';
     import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
@@ -87,7 +104,7 @@ div
 	export default {
 		name: 'Home',
 		components: {
-			pagination,bText,bInfo,bPassword,bSms
+			pagination,bText,bInfo,bPassword,bSms,bYzm
 		},
 		computed:{
 			...mapState(['test'])
@@ -133,6 +150,16 @@ div
 				        success(true);
 			        },1000)
 		        });
+            },
+	        getYzmFn(){
+		        return new Promise(success=>{
+			        setTimeout(e=>{
+				        success({
+					        src:'https://xinqihang.junegeorge.top/index.php?s=/captcha&_='+new Date().getTime(),
+					        token:'111222333'
+				        })
+			        },1000)
+		        })
             }
         }
 	}

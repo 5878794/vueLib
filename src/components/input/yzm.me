@@ -1,10 +1,10 @@
 
 
-短信输入
+验证码输入
 
 
 html:
-<b-sms
+<b-yzm
     ref="input_text"
     inRef='input2'
     class="b_input"
@@ -17,10 +17,7 @@ html:
     err="请输入用户名"
     :blurCheck='true'
 
-    sendSmsFn='sendSms' //发送函数名   放到methods里面
-                        //异步函数，需 return true/false    true表示发送短信成功
-                        //发送失败 直接在函数里     throw '失败原因';
-                        //函数中需要自己检查电话号码，和获取其它参数
+    getYzmFn='getYZM'       //获取验证码的函数  放在methods下  需返回promise对象，必须带src参数
 
     //之下可以在全局配置 mixin/allStyle.js中配置  单独写会覆盖全局
 
@@ -29,11 +26,17 @@ html:
 
 js:
 methods:{
-    sendSms(){
+    getYZM(){
         return new Promise(success=>{
             setTimeout(e=>{
-                success(true);
+                success({
+                    src:'https://xinqihang.junegeorge.top/index.php?s=/captcha&_='+new Date().getTime(),
+                    token:'111222333'
+                })
             },1000)
-        });
+        })
     }
 }
+
+获取值用  this.$refs.yzm.catchData 会获取到返回的对象（success返回的值）
+

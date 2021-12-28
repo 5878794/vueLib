@@ -33,6 +33,11 @@ export default {
 		sendBtnStyle:'color:#ccc; width:60px;',
 		//发送短信倒计时
 		time:'60'
+	},
+
+	//yzm
+	yzm:{
+		yzmStyle:'width:80px; height:40px; display:block;'
 	}
 
 };
