@@ -106,7 +106,7 @@ bodyDom(
 </script>
 
 <style scoped lang="less">
-    @import "../../css/box";
+
 
     .__input__{
         position: relative;
@@ -123,7 +123,7 @@ bodyDom(
         border: none;
         outline:none;
         /*appearance: none !important;*/
-        /*-webkit-appearance: none !important;*/
+        -webkit-appearance: none !important;
         /*-moz-appearance: none !important;*/
     }
     .noSelect{

@@ -186,7 +186,6 @@ div(class="body_ box_hcc")
 </script>
 
 <style lang="less" scoped>
-    @import "../../css/box";
     .body_{
         width: 100%; height: 100%; min-width: 500px;
         user-select: none;

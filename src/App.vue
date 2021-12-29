@@ -7,6 +7,8 @@
 </template>
 
 <style lang="less">
+@import "./css/box";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

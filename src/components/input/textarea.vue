@@ -53,7 +53,6 @@ bodyDom(
 </script>
 
 <style scoped lang="less">
-    @import "../../css/box";
 
     .__input_textarea__{
         display: block; line-height: 20px;

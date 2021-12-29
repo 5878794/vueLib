@@ -145,7 +145,7 @@ div
     import bYzm from '../components/input/yzm';
     import bTextarea from '../components/input/textarea';
     import bSelect from '../components/input/select';
-    import bDate from '../components/input/date'
+    import bDate from '../components/input/date_sys'
     import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';

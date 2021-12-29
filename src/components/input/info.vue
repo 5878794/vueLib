@@ -36,7 +36,6 @@ bodyDom(
 </script>
 
 <style scoped lang="less">
-    @import "../../css/box";
 
     .__input__{
         position: relative;
