@@ -17,7 +17,7 @@ div
         :selectData="selectData"
         :icon="icon"
         name="输入"
-        value="0"
+        value=""
         unit="米"
         rule="must"
         err="请输入用户名"

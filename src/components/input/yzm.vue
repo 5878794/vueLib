@@ -65,7 +65,6 @@ bodyDom(
 			}
 		},
 		mounted(){
-			console.log(this.yzmStyle)
 			this.getPic();
 		},
 		methods:{

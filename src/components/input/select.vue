@@ -85,7 +85,13 @@ bodyDom(
 
                 this.selectList = backData;
 
-                this.onSelect();
+
+                if(this.val === ''){
+
+                }else{
+	                this.onSelect();
+                }
+
             },
 	        onSelect(){
                 if(this.val === ''){
