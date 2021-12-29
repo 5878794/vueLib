@@ -1,136 +1,10 @@
 <template lang="pug">
 div
+    a-button(type="primary") Primary
     div(class="test" @click="testFn") test
-    pagination(
-        class='pagination box_hcc'
-        :totalList="141"
-        :nowPage="6"
-        :pageSize="10"
-        url="/about?page="
-    )
-    b-date(
-        ref="input_text123"
-        inRef='input2'
-        class="b_input"
-        placeholder="电话号码"
-        :disabled="false"
-        :icon="icon"
-        name="输入"
-        value="fff"
-        unit="米"
-        rule="must,min:1,max:20,str"
-        err="请输入用户名"
-        :blurCheck='true'
-        @mychange="changeFn"
-    )
-    b-select(
-        ref="input_text123"
-        inRef='input2'
-        class="b_input"
-        placeholder="请选择电话号码"
-        :disabled="false"
-        :selectData="selectData"
-        :icon="icon"
-        name="输入"
-        value=""
-        unit="米"
-        rule="must"
-        err="请输入用户名"
-        :blurCheck='true'
-        @mychange="changeFn"
-    )
-    b-text(
-        ref="input_text123"
-        inRef='input2'
-        class="b_input"
-        placeholder="电话号码"
-        :disabled="true"
-        :icon="icon"
-        name="输入"
-        value="fff"
-        unit="米"
-        rule="must,min:1,max:20,str"
-        err="请输入用户名"
-        :blurCheck='true'
-        @mychange="changeFn"
-    )
-    b-password(
-        ref="input_text"
-        inRef='input2'
-        class="b_input"
-        placeholder="电话号码"
-        :disabled="false"
-        :icon="icon"
-        name="密码"
-        value="fff"
-        unit="米"
-        rule="must,min:1,max:20,str"
-        err="请输入用户名"
-        :blurCheck='true'
-        @mychange="changeFn"
-    )
 
+    edit
 
-    b-info(
-        ref="input_text"
-        class="b_input"
-        :icon="icon"
-        name="文本"
-        value="fff"
-        unit="米"
-    )
-
-
-
-
-    b-sms(
-        ref="input_text"
-        inRef='input2'
-        class="b_input"
-        placeholder="电话号码"
-        :disabled="false"
-        :icon="icon"
-        name="输入"
-        value="fff"
-        unit="米"
-        rule="must,min:1,max:20,str"
-        err="请输入用户名"
-        :blurCheck='true'
-
-        sendSmsFn='sendSms'
-
-    )
-    b-yzm(
-        ref="input_text"
-        inRef='input2'
-        class="b_input"
-        placeholder="电话号码"
-        :disabled="false"
-        :icon="icon"
-        name="输入"
-        value="fff"
-        rule="must,min:1,max:20,str"
-        err="请输入用户名"
-        :blurCheck='true'
-
-        getYzmFn='getYzmFn'
-
-    )
-
-    b-textarea(
-        ref="input_textarea"
-        inRef='input2'
-        class="b_textarea"
-        placeholder="电话号码"
-        :disabled="false"
-        :icon="icon"
-        name="输入"
-        value="fff"
-        rule="must,min:1,max:20,str"
-        err="请输入用户名"
-        :blurCheck='true'
-        @mychange="changeFn"
-    )
 
     div(@click="getVal") aaaa
 </template>
@@ -147,13 +21,14 @@ div
     import bSelect from '../components/input/select';
     import bDate from '../components/input/date_sys'
     import sys from "../lib/sys";
+    import edit from '../components/wangEditor/edit';
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
 
 	export default {
 		name: 'Home',
 		components: {
-			pagination,bText,bInfo,bPassword,bSms,bYzm,bTextarea,bSelect,bDate
+			pagination,bText,bInfo,bPassword,bSms,bYzm,bTextarea,bSelect,bDate,edit
 		},
 		computed:{
 			...mapState(['test'])
