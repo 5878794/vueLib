@@ -126,9 +126,9 @@ bodyDom(
         box-sizing: border-box; padding-right: 15px;
         border: none;
         outline:none;
-        /*appearance: none !important;*/
+        appearance: none !important;
         -webkit-appearance: none !important;
-        /*-moz-appearance: none !important;*/
+        -moz-appearance: none !important;
     }
     .noSelect{
         color:#aaa !important;
