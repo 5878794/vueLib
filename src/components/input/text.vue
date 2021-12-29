@@ -22,6 +22,7 @@ bodyDom(
         :disabled="disabled"
         class="__input__ boxflex1"
         type="text"
+        autocomplete="off"
         :placeholder="placeholder1"
         v-model="val"
         :rule="rule"

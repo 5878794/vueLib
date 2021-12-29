@@ -22,6 +22,7 @@ bodyDom(
         class="__input__ boxflex1"
         type="text"
         :placeholder="placeholder1"
+        autocomplete="off"
         v-model="val"
         :rule="rule"
         @focus="focusFn"

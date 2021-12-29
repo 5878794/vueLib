@@ -13,6 +13,7 @@ bodyDom(
     :inputStyle="inputStyle"
     :inputFocusStyle="inputFocusStyle"
     :errStyle="errStyle"
+    autocomplete="off"
 
     :showErr="showErr"
 )

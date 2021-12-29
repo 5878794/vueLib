@@ -122,6 +122,9 @@ bodyDom(
         display: block; width: 100%; height: 100%;
         border: none;
         outline:none;
+        /*appearance: none !important;*/
+        /*-webkit-appearance: none !important;*/
+        /*-moz-appearance: none !important;*/
     }
     .noSelect{
         color:#aaa !important;

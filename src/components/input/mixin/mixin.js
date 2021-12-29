@@ -84,6 +84,9 @@ export default {
 	watch:{
 		value(val){
 			this.val = val;
+		},
+		disabled(){
+			this.disabledFn();
 		}
 	},
 	updated(){

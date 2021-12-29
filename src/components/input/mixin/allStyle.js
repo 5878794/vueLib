@@ -16,7 +16,7 @@ export default {
 	//输入框获取焦点样式
 	inputFocusStyle:'border:1px solid blue; border-radius:10px;',
 	//输入框不可编辑样式
-	disabledStyle:'border:1px solid #ccc; border-radius:10px;color:#999;',
+	disabledStyle:'border:1px solid #ccc; border-radius:10px;color:#aaa !important;',
 	//错误提示的样式
 	errStyle:'color:red; font-size:12px;',
 

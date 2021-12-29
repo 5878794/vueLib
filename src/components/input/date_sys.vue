@@ -1,7 +1,5 @@
 
 
-
-
 <template lang="pug">
 bodyDom(
     :icon="icon"
@@ -23,7 +21,7 @@ bodyDom(
         :style="nowInputStyle"
         :disabled="disabled"
         class="__input__ boxflex1"
-        type="password"
+        type="date"
         autocomplete="off"
         :placeholder="placeholder1"
         v-model="val"
@@ -58,4 +56,5 @@ bodyDom(
         box-sizing: border-box;
         background: none;
     }
+    input{outline:none}
 </style>

@@ -8,6 +8,21 @@ div
         :pageSize="10"
         url="/about?page="
     )
+    b-date(
+        ref="input_text123"
+        inRef='input2'
+        class="b_input"
+        placeholder="电话号码"
+        :disabled="false"
+        :icon="icon"
+        name="输入"
+        value="fff"
+        unit="米"
+        rule="must,min:1,max:20,str"
+        err="请输入用户名"
+        :blurCheck='true'
+        @mychange="changeFn"
+    )
     b-select(
         ref="input_text123"
         inRef='input2'
@@ -29,7 +44,7 @@ div
         inRef='input2'
         class="b_input"
         placeholder="电话号码"
-        :disabled="false"
+        :disabled="true"
         :icon="icon"
         name="输入"
         value="fff"
@@ -116,6 +131,7 @@ div
         :blurCheck='true'
         @mychange="changeFn"
     )
+
     div(@click="getVal") aaaa
 </template>
 
@@ -129,6 +145,7 @@ div
     import bYzm from '../components/input/yzm';
     import bTextarea from '../components/input/textarea';
     import bSelect from '../components/input/select';
+    import bDate from '../components/input/date'
     import sys from "../lib/sys";
 
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
@@ -136,7 +153,7 @@ div
 	export default {
 		name: 'Home',
 		components: {
-			pagination,bText,bInfo,bPassword,bSms,bYzm,bTextarea,bSelect
+			pagination,bText,bInfo,bPassword,bSms,bYzm,bTextarea,bSelect,bDate
 		},
 		computed:{
 			...mapState(['test'])
