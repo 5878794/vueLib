@@ -23,7 +23,7 @@ bodyDom(
         :style="nowInputStyle"
     )
         select(
-
+            :style='selectArrowStyle'
             :disabled="disabled"
             class="__select__"
             :class="noSelect"
@@ -46,6 +46,7 @@ bodyDom(
 <script>
 	import bodyDom from './mixin/body';
 	import mixinFn from './mixin/mixin';
+	import img from './mixin/arrow';
 
 	export default {
 		components:{bodyDom},
@@ -59,7 +60,8 @@ bodyDom(
         data(){
 		    return {
 		    	selectList:[],
-			    noSelect:''
+			    noSelect:'',
+			    selectArrowStyle:''
             }
         },
         watch:{
@@ -69,6 +71,7 @@ bodyDom(
         },
         mounted() {
 			this.handlerData();
+			this.selectArrowStyle = `background:url(${img.arrow}) no-repeat right center;background-size:12px 6px;`
         },
         methods:{
 	        handlerData(){
@@ -113,13 +116,14 @@ bodyDom(
         display: block;
         height: 100%;
         color: #333; box-sizing: border-box;
-        padding:0 10px;
+        padding:0 15px 0 10px;
         box-sizing: border-box;
         background: none;
 
     }
     .__select__{
         display: block; width: 100%; height: 100%;
+        box-sizing: border-box; padding-right: 15px;
         border: none;
         outline:none;
         /*appearance: none !important;*/
