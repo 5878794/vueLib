@@ -90,7 +90,7 @@ bodyDom(
 
 
                 if(this.val === ''){
-
+	                this.noSelect = 'noSelect';
                 }else{
 	                this.onSelect();
                 }
