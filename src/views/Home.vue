@@ -46,6 +46,7 @@ div
             }
         },
         async mounted() {
+			console.log(555)
 			// let [data] = await ajax.send([
 			// 	api.distAll()
             // ]);

@@ -24,7 +24,10 @@ const routes = [
 	}
 ];
 
+
+
 const router = createRouter({
+			//hash模式  createWebHashHistory    其实都是单页面  只是hash能直接访问
 	history: createWebHistory(process.env.BASE_URL),
 	routes
 });
