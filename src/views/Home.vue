@@ -11,6 +11,7 @@ div
 
 <script>
 	// @ is an alias to /src
+    import {ajax,api} from '../lib/ajax';
     import pagination from "../components/pagination/pagination";
     import bText from '../components/input/text';
     import bInfo from '../components/input/info';
@@ -44,7 +45,13 @@ div
                 ]
             }
         },
-        methods:{
+        async mounted() {
+			// let [data] = await ajax.send([
+			// 	api.distAll()
+            // ]);
+			// console.log(data);
+        },
+		methods:{
 	        storeFn(){
 		        this.$store.commit('add','1');
 	        	console.log(this.$store.state.test)
