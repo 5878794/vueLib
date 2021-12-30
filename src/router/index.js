@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import before from "./before";
+import after from "./after";
 
 
 
@@ -33,6 +34,7 @@ const router = createRouter({
 //全局路由监听 router
 router.beforeEach((to, from, next) => {
 	before(to,from,next);
+	after(to,from);
 });
 
 
